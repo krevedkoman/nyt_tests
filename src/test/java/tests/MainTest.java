@@ -22,7 +22,6 @@ public class MainTest {
         MainPage mainPage = new MainPage();
         ApisPage apisPage = new ApisPage();
         ArchProdPage archProdPage = new ArchProdPage();
-
         open(mainPage.getNyt_url());
         $(byXpath(mainPage.getNyt_apis_page_selector())).click();
         $(byXpath(apisPage.getNyt_apis_page_search_selector()))
