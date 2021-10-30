@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import pages.ApisPage;
 import pages.ArchProdPage;
@@ -14,9 +15,14 @@ public class MainTest {
 
     @Test
     void mainTest(){
+        // browser configuration
+        Configuration.browser = "edge";
+        Configuration.startMaximized = true;
+
         MainPage mainPage = new MainPage();
         ApisPage apisPage = new ApisPage();
         ArchProdPage archProdPage = new ArchProdPage();
+
         open(mainPage.getNyt_url());
         $(byXpath(mainPage.getNyt_apis_page_selector())).click();
         $(byXpath(apisPage.getNyt_apis_page_search_selector()))
