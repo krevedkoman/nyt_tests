@@ -3,7 +3,7 @@ package pages;
 public class MainPage {
 
     private String nyt_url = "https://developer.nytimes.com/";
-    private String nyt_apis_page_selector = "//*[@id=\"index\"]/div/ng-component/page-content/div/div[2]/mat-card[2]/a";
+    private String nyt_apis_page_selector = "Learn about and try out NYT's APIs.";
 
     public String getNyt_url() {
 
