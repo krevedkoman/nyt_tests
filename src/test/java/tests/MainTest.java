@@ -16,7 +16,7 @@ public class MainTest {
     void mainTest(){
         // browser configuration
         Configuration.browser = "chrome";
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
 
         MainPage mainPage = new MainPage();
