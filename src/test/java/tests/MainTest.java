@@ -18,6 +18,7 @@ public class MainTest {
         // browser configuration
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
+        Configuration.headless = false;
 
         MainPage mainPage = new MainPage();
         ApisPage apisPage = new ApisPage();
