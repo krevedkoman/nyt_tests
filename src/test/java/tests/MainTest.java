@@ -9,8 +9,7 @@ import pages.MainPage;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MainTest {
 
@@ -27,13 +26,13 @@ public class MainTest {
         open(mainPage.getNyt_url());
         // looking by text
         $(byText(mainPage.getNyt_apis_page_selector())).click();
-        // looking for CSS selector
+        // looking by CSS selector
         $(apisPage.getNyt_apis_page_search_selector())
                 .setValue(apisPage.getNyt_apis_page_search_value()).click();
-        // looking for Xpath
-        $(byXpath(apisPage.getNyt_apis_page_search_result_selector()))
-                .shouldHave(text(apisPage.getNyt_apis_page_search_value())).click();
-        // looking for CSS class name
+        // looking in collection of elements by search results
+        $$(apisPage.getNyt_apis_page_search_result_selector())
+                .first().$("a").click();
+        // looking by CSS class name
         $(archProdPage.getNyt_api_archive_product_looking_selector())
                 .shouldHave(text(archProdPage.getGetNyt_api_archive_product_looking_value()));
     }
